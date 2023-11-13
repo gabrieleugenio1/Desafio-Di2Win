@@ -65,20 +65,23 @@ label {
   pointer-events: none;
 }
 
-#nome:focus ~ .nome {
-  position: relative;
-  top: -8vh;
-  font-size: 16px;
-  color: #333;
-}
 
-#cpf:focus ~ .cpf {
-  position: relative;
-  top: -8vh;
-  font-size: 16px;
-  color: #333;
+  #nome:focus + .nome,
+  #nome:valid + .nome {
+    top: -8vh;
+    font-size: 16px;
+    color: #333;
+  }
+
+  #cpf:focus ~ .cpf ,
+  #cpf:valid ~ .cpf {
+    position: relative;
+    top: -8vh;
+    font-size: 16px;
+    color: #333;
 }
-#rg:focus ~ .rg {
+#rg:focus ~ .rg,
+#rg:valid ~ .rg {
   position: relative;
   top: -8vh;
   font-size: 16px;
