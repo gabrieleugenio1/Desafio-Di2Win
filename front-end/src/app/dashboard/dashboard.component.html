@@ -1,8 +1,32 @@
 <main>
-  <h1>teste</h1>
   <div class="enviados">
-    <h2>enviados: </h2>
+    <h2>Enviados: </h2>
+    <h3>200</h3>
   </div>
-  <div class="extraidos"></div>
-  <div class="nLidos"></div>
+  <div class="extraidos">
+    <h2>Extraidos: </h2>
+    <h3>600</h3>
+  </div>
+  <div class="nLidos">
+    <h2>Não lidos: </h2>
+    <h3>50</h3>
+  </div>
+<div class="graph">
+  <canvas
+  baseChart
+  class="chart"
+  [data]="barChartData"
+  [options]="barChartOptions"
+  [plugins]="barChartPlugins"
+  [type]="barChartType"
+  (chartHover)="chartHovered($event)"
+  (chartClick)="chartClicked($event)"
+>
+</canvas>
+
+<button class="graphBtn" mat-button mat-raised-button color="primary" (click)="randomize()">
+  Update
+</button>
+  </div>
+
 </main>

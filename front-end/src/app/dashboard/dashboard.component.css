@@ -1,13 +1,74 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+  padding: 0 10vw 0 10vw;
 }
 
-.envaidos{
+main {
+  margin-top: 8vh;
+  justify-content: center;
+  gap: 4vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.enviados {
+  width: 20vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  border-radius: 13px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+}
+
+.extraidos {
+  width: 20vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  border-radius: 13px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+}
+
+.nLidos {
     width: 20vw;
     height: 20vh;
-    background-color: red;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    border-radius: 13px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+  }
+
+  .graph{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .graphBtn{
+    margin-top: 1rem;
+    height: 3rem;
+    background: #1C1A1C;
+    border-radius: 3rem;
+    color: #AAAAAA;
+  }
