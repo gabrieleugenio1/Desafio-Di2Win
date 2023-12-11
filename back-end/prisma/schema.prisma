@@ -6,27 +6,26 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
 model User {
   id        BigInt    @id @default(autoincrement())
-  name      String
-  segment   Extract[]
+  name      String    @db.VarChar(200)  @notnull
+  segment   String?   @db.VarChar(50)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-
+  extract  Extract[]
   @@map("users")
 }
 
 model Extract {
   id            BigInt   @id @default(autoincrement())
   pages_process BigInt
-  doc_type      String
+  doc_type      String   @db.VarChar(100)
   createdAt     DateTime @default(now())
   userId        BigInt
   user          User     @relation(fields: [userId], references: [id], onUpdate: Cascade)
-
   @@map("extracts")
 }

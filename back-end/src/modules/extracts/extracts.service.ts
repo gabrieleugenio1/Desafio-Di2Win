@@ -8,6 +8,9 @@ export class ExtractsService {
   constructor(private prisma: PrismaService) {}
 
   create(createExtractDto: CreateExtractDto) {
+
+
+
     return 'This action adds a new extract';
   }
 
