@@ -1,32 +1,34 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
-import { CreateExtractDto } from './dto/create-extract.dto';
-import { UpdateExtractDto } from './dto/update-extract.dto';
 import { PrismaService } from '../../database/prisma.service';
 
 @Injectable()
 export class ExtractsService {
   constructor(private prisma: PrismaService) {}
 
-  create(createExtractDto: CreateExtractDto) {
-
-
-
-    return 'This action adds a new extract';
+  async findAll() {
+    const allData = await this.prisma.extract.findMany();
+    return allData;
   }
 
-  findAll() {
-    return `This action returns all extracts`;
+  async findAllWithUser() {
+    const allDataUsers = await this.prisma.extract.findMany({
+      include:{
+        user: {
+          select: {
+            name: true,
+            segment: true,
+          }
+        }
+      }
+    });
+    return allDataUsers;
   }
-
-  findOne(id: number) {
-    return `This action returns a #${id} extract`;
+  
+  async findAllCount() {
+    const allDataUsers = await this.prisma.$queryRaw`SELECT e.doc_type, COUNT(*) FROM extracts e GROUP BY e.doc_type;`
+    return allDataUsers;
   }
-
-  update(id: number, updateExtractDto: UpdateExtractDto) {
-    return `This action updates a #${id} extract`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} extract`;
-  }
+  
+  
 }
