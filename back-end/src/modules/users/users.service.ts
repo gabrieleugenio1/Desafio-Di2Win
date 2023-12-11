@@ -1,29 +1,19 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
 import { PrismaService } from '../../database/prisma.service';
 
 @Injectable()
 export class UsersService {
   constructor(private prisma: PrismaService) {}
-  
-  create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+
+  async findAll() {
+    const users = await this.prisma.user.findMany();
+    return users;
   }
 
-  findAll() {
-    return `This action returns all users`;
+  async countAllExtract() {
+    const countAllExtract = await this.prisma.$queryRaw`SELECT u.name,COUNT(*) FROM users u JOIN extracts e ON u.id = e.user_id GROUP BY u.name;`
+    return countAllExtract;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
-  }
-
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} user`;
-  }
 }

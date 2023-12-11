@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { ExtractEntity as Extract } from "../../extracts/entities/extract.entity";
 
 export interface UserEntity {
