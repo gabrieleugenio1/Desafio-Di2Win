@@ -4,6 +4,7 @@ import { BaseChartDirective } from 'ng2-charts';
 import { CommonModule } from '@angular/common';
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
 import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
+import { getExtracts } from '../app.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,6 +18,12 @@ import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
 })
 export class DashboardComponent {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
+
+  ngOnInit() {
+    getExtracts().then((res) => {
+      console.log(res)
+    })
+  }
 
   public barChartOptions: ChartConfiguration['options'] = {
     responsive: true,

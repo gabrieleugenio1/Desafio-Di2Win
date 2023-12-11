@@ -17,19 +17,21 @@ export class AppComponent {
 
 
 export async function getUsers() {
-  const result = await fetch('localhost:3000', {
+  const result = await fetch('localhost:3000/users', {
     method: "GET",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      query: `{
-        user {
-          id
-          name
-          segment
-        }
-      }`
-    })
   }).then(res => res.json())
 
   return result
 }
+
+export async function getExtracts() {
+  const result = await fetch('localhost:3000/extracts/count', {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  }).then(res => res.json())
+
+  return result
+}
+
+
