@@ -1,22 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
-*{
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  font-family: "Jost", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-main{
+main {
   margin-top: 8vh;
   gap: 4vw;
   display: flex;
   justify-content: center;
-  width: 100vw;
 }
 
-div{
+div {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -24,8 +24,7 @@ div{
   width: 40vw;
   border-radius: 60px;
   background: #ffffff;
-  box-shadow:  20px 20px 77px #d9d9d9,
-  -20px -20px 77px #ffffff;
+  box-shadow: 20px 20px 77px #d9d9d9, -20px -20px 77px #ffffff;
 }
 
 form {
@@ -35,17 +34,45 @@ form {
   align-self: center;
   align-content: center;
   max-width: 40vw;
+}
+
+form input {
+  width: 20vw;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  border-style: solid;
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
+
+label {
+  margin-top: 2rem;
   font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-form input{
-width: 20vw;
-  border-radius: 5px;
-  padding-bottom: 1rem;
+button {
+  margin-top: 8vh;
+  height: 5vh;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 0.5rem;
+  border-radius: 4px;
+  background-color: #b6006e;
+  color: white;
+  border-color: #b6006e;
+  cursor: pointer;
+}
+button a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
-h1{
+h1 {
   font-size: 3rem;
+  font-weight: bold;
   margin-bottom: 4rem;
 }
-

@@ -8,16 +8,17 @@ import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
 export const routes: Routes = [
   {
     path: '',
+    component: LoginComponent,
+  },
+  {
+    path: 'home',
     component: HomeComponent,
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
   },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
+
 ];
 
 @NgModule({

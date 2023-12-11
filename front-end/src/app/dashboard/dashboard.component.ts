@@ -25,7 +25,7 @@ export class DashboardComponent {
       x: {
       },
       y: {
-        min: 7,
+        min: 10,
       },
     },
     plugins: {

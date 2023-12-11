@@ -12,4 +12,24 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'front-end';
+
+}
+
+
+export async function getUsers() {
+  const result = await fetch('localhost:3000', {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      query: `{
+        user {
+          id
+          name
+          segment
+        }
+      }`
+    })
+  }).then(res => res.json())
+
+  return result
 }
